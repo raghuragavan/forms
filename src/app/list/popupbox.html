@@ -1,0 +1,28 @@
+<div class="">
+
+    <h2><i class="fa-solid fa-circle-check"></i> {{this.data?.update_detail?.id?"Updated Successfully":"Created Successfully"}}</h2>
+
+    <!-- <div class="d-flex popup-center">
+        <p>Id:</p> &nbsp; &nbsp;
+        <P>{{this.data?.update_detail?.id?data.data.id:data.id}}</P>
+    </div> -->
+
+    <div class="d-flex popup-center">
+        <p>Email:</p> &nbsp; &nbsp;
+        <P>{{this.data?.update_detail?.id?data.data.emailId:data.emailId}}</P>
+    </div>
+
+    <div class="d-flex popup-center">
+        <p>FirstName:</p> &nbsp; &nbsp;
+        <P>{{this.data?.update_detail?.id?data.data.firstname:data.firstname}}</P>
+    </div>
+
+    <div class="d-flex popup-center">
+        <p>LastName:</p> &nbsp; &nbsp;
+        <P>{{this.data?.update_detail?.id?data.data.lastname:data.lastname}}</P>
+    </div>
+
+ 
+    <button mat-button color="warn" class="close-icon" id="pop-done" [mat-dialog-close]="true" >Done</button>
+
+</div>

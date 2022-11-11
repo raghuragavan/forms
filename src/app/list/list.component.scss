@@ -1,0 +1,167 @@
+table {
+  width: 100%;
+}
+table {
+  border: 2px solid #96d4d4;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: antiquewhite;
+}
+th,
+tr {
+  border-bottom: 2px solid #96d4d4;
+}
+th {
+  padding: 25px;
+}
+th.mat-header-cell {
+  text-align: left;
+}
+.id:hover {
+  color: blue;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.Avatar {
+  width: 60px;
+  height: 90px;
+}
+// .pagination {
+//     justify-content: center;
+// }
+// .mat-paginator.pagination{
+//     justify-content: center!important;
+// }
+
+// .button:disabled{
+//     background-color: #f3f7f7 !important;
+//     color: purple !important;
+// }
+
+table {
+  width: 100%;
+  border-top: 1px solid #e0cccc;
+}
+
+.warn3 {
+  float: right;
+  margin: 20px;
+}
+
+// .success {
+//     margin-top: 8px;
+//     padding: 8px;
+//     background-color: green;
+//     color: white;
+//     border-radius: 7px;
+
+// }
+
+// .form1 {
+//     width: 500px !important;
+//     height: 300px !important;
+// }
+
+.mat-dialog-container {
+  transform: none;
+  width: 80% !important;
+  height: 450px;
+  margin-top: 100px;
+}
+
+input {
+  padding: 6px;
+  width: 250px;
+  margin-bottom: 10px;
+}
+h2 {
+  color: blueviolet;
+  text-align: center;
+  font-size: 25px;
+}
+.warn1 {
+  float: right;
+  margin-top: 20px;
+}
+.primary1 {
+  margin-top: 20px;
+  background-color: red;
+}
+input {
+  margin: 10px 0px;
+}
+.close-icon {
+  min-width: 15px !important;
+  height: 35px !important;
+  background-color: red;
+}
+.close-icon {
+  color: black;
+}
+.popup-center {
+  margin-left: 26%;
+}
+#pop-done {
+  margin-top: 15px;
+  margin-left: 40%;
+}
+.edit {
+  color: green;
+}
+.delete {
+  color: orange;
+}
+
+// .example-form {
+//     min-width: 150px;
+//     max-width: 500px;
+//     width: 100%;
+//   }
+
+//   .example-full-width {
+//     width: 100%;
+//   }
+
+//   .mat-autocomplete-panel{
+//     width: 250px !important;
+//   }
+
+.width-section .mat-form-field-underline {
+  position: absolute;
+  width: 0px;
+  pointer-events: none;
+  transform: scale3d(1, 1.0001, 1);
+}
+input {
+  margin: 10px 0px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.mat-form-field-infix {
+  width: 255px;
+}
+
+.mat-form-field {
+  line-height: 0.125;
+}
+
+.deletebtn {
+  margin-left: 20px;
+}
+.delete {
+  justify-content: space-around;
+}
+.matDelete {
+  color: red;
+  align-items: center;
+}
+.matedit {
+  color: green;
+  align-items: center;
+}
+.no-data {
+  pointer-events: none;
+  color: red;
+}

@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-between">
+  <h2>{{data1?.user_detail?.id?'Update User':'Create New User'}}</h2>
+  <button mat-button class="close-icon" [mat-dialog-close]="true">X</button>
+</div>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.valid,myForm.value)" class="form1">
+  <label class="lable">Email address</label>
+  <mat-form-field class="example-full-width width-section" appearance="fill">
+    <input matInput type="email" formControlName="emailId" placeholder="Enter your Email" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="dispEmail()">
+      <mat-option [ngClass]="option.email==' listEmail not found in'?'no-data':''"
+        *ngFor="let option of filteredOptions |async" [value]="option">
+        {{option.email}}
+      </mat-option>
+    </mat-autocomplete>
+    <div class="text-danger" *ngIf="formControl.emailId.errors && (formControl.emailId.touched||formControl.emailId)">
+      <span class="text-danger" *ngIf="formControl.emailId.errors?.required">*Email address required</span>
+      <span class="text-danger" *ngIf="myForm.controls.firstname.errors?.pattern">*Enter only characters</span>
+    </div>
+  </mat-form-field><br>
+
+  <mat-label class="lable"> First Name</mat-label><br>
+  <mat-form-field class="example-full-width width-section" appearance="fill">
+    <input matInput type="text" formControlName="firstname" [matAutocomplete]="auto1" matInput
+      placeholder="Enter Firstname">
+    <mat-autocomplete #auto1="matAutocomplete">
+      <mat-option *ngFor="let list of userlist" [value]="list.first_name">
+        {{list.first_name}}
+      </mat-option>
+    </mat-autocomplete>
+    <div class="text-danger"
+      *ngIf="formControl.firstname.invalid && (formControl.firstname.touched ||formControl.firstname.dirty)">
+      <span class="text-danger" *ngIf="formControl.firstname.errors?.required">*Firstname Required</span>
+      <span class="text-danger" *ngIf="myForm.controls.firstname.errors?.pattern">*Enter only characters</span>
+    </div>
+  </mat-form-field><br>
+
+  <label class="lable">Last name</label> <br>
+  <mat-form-field class="example-full-width width-section" appearance="fill">
+    <input matInput type="text" formControlName="lastname" [matAutocomplete]="auto2" matInput
+      placeholder="Enter Lastname">
+    <mat-autocomplete #auto2="matAutocomplete">
+      <mat-option *ngFor="let list of userlist" [value]="list .last_name">
+        {{list.last_name}}
+      </mat-option>
+    </mat-autocomplete>
+    <div class="text-danger"
+      *ngIf="formControl.lastname.invalid && (formControl.lastname.touched || formControl.lastname.dirty)">
+      <span class="text-danger" *ngIf="formControl.lastname.errors?.required">*Lastname Required</span>
+      <span class="text-danger" *ngIf="myForm.controls.lastname.errors?.pattern">*Enter only characters</span>
+    </div>
+  </mat-form-field><br>
+
+
+  <button mat-raised-button class="primary primary1" [disabled]="disabled">
+    {{data1?.user_detail?.id?'Update':'Submit'}}
+  </button>
+</form>

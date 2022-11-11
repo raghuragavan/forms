@@ -1,0 +1,101 @@
+<div class="d-flex newForm">
+<h1 class="text-danger">New Users</h1>
+<button mat-button class="close-icon" [mat-dialog-close]="true">X</button>
+</div>
+<form  [formGroup]="newForm" (ngSubmit)="newSubmit(newForm.value,newForm.valid)"  class="form1">
+ <label class="lable">Email</label> <br>
+  <mat-form-field class="example-full-width width-section" appearance="fill">
+    <input
+      matInput
+      type="email"
+      formControlName="EmailId"
+      placeholder="Enter your name"
+      [matAutocomplete]="auto1"
+      matInput >
+    <mat-autocomplete #auto1="matAutocomplete">
+      <mat-option *ngFor="let user of users" [value]="user.email">
+        {{user.email}}
+      </mat-option>
+    </mat-autocomplete> 
+    <div class="text-danger"  *ngIf="newForm.get('EmailId')?.invalid && (newForm.get('EmailId')?.touched || newForm.get('EmailId')?.dirty)">
+      <span class="text-danger" *ngIf="newForm.get('EmailId').errors?.pattern">Enter valid EmailId</span>
+      <span class="text-danger" *ngIf="newForm.get('EmailId').errors?.required">Email field is needed</span>
+    </div>
+  </mat-form-field><br/> 
+
+
+  <label class="lable">Name</label> <br>
+  <mat-form-field class="example-full-width width-section" appearance="fill">
+    <input
+      matInput
+      type="text"
+      formControlName="firstname"
+      placeholder="Enter your name"
+      [matAutocomplete]="auto2"
+      matInput>
+    <mat-autocomplete #auto2="matAutocomplete">
+      <mat-option *ngFor="let user of users" [value]="user.first_name">
+        {{user.first_name}}
+      </mat-option>
+    </mat-autocomplete> 
+    <div class="text-danger"  *ngIf="newForm.get('firstname')?.invalid && (newForm.get('firstname')?.touched || newForm.get('firstname')?.dirty)">
+      <span class="text-danger" *ngIf="newForm.get('firstname').errors?.pattern">Enter valid firstname</span>
+      <span class="text-danger" *ngIf="newForm.get('firstname').errors?.required">Name field is needed</span>
+    </div>
+  </mat-form-field><br />
+
+
+  <label class="lable">PhoneNo</label> <br>
+  <mat-form-field class="example-full-width width-section" appearance="fill">
+    <input
+      matInput
+      type="tel"
+      formControlName="phone_number"
+      placeholder="Enter your PhoneNumber">
+   </mat-form-field><br />
+   
+
+  <label class="lable">Country</label> <br>
+  <mat-form-field class="example-full-width width-section" appearance="fill">
+    <input
+      matInput
+      type="text"
+      formControlName="country"
+      placeholder="Enter your country"/> 
+  </mat-form-field> <br />
+
+  <h4>Sports</h4>
+  <mat-radio-group formControlName="sports" aria-label="Select an option">
+    <mat-radio-button  class='active' value="football">Football</mat-radio-button> &nbsp;
+    <mat-radio-button  value="volleyball">Volleyball</mat-radio-button>
+  </mat-radio-group> <br><br>
+
+  <section class="example-section">
+    <h4>Select Fruits:</h4>
+    <div formArrayName="Fruits"  *ngFor="let item of newForm.get('Fruits').controls; let i = index;">
+      <div [formGroupName]="i">
+        <p><mat-checkbox formControlName="apple">Apple</mat-checkbox></p>
+        <p><mat-checkbox formControlName="orange">Orange</mat-checkbox></p>
+        <p><mat-checkbox formControlName="mango">Mango</mat-checkbox></p>
+        <p><mat-checkbox formControlName="grapes">Grapes</mat-checkbox></p>
+      </div>
+  </div>
+  </section>
+
+  <!-- <div class="form-group" >
+    <label for="options">Options:</label>
+    <div *ngFor="let option of options">
+        <label>
+            <input type="checkbox"
+                   name="options"
+                   value="{{option.value}}"
+                   [(ngModel)]="option.checked"/>
+            {{option.name}}
+        </label>
+    </div>
+</div> -->
+
+  <button  mat-raised-button type="submit" color="primary" [disabled]="!newForm.valid"  class="primary">Submit</button>
+
+</form>
+

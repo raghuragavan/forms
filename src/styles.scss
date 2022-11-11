@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+button:disabled{
+    background-color: #ced1d1 !important;
+    color: rgb(133, 128, 133) !important;
+}
+
+.width-section .mat-form-field-infix{
+  width: 255px;
+  border-top:0px;
+  background: none;
+}
+.width-section .mat-form-field-underline{
+  width: 0px;
+}
+.mat-form-field-flex {
+  background: none;
+ }
+ .mat-form-field-appearance-fill .mat-form-field-flex{
+  background-color: transparent !important;
+  padding:0px !important;
+ }
+
+ .mat-form-field-wrapper {
+  padding-bottom: 0px!important;
+}
+.lable{
+  font-weight: 600;
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+  max-width: 30px!important;
+}
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+  text-align: center !important;
+  padding-left: 0px !important;
+}
